@@ -1,0 +1,24 @@
+# Dependencies
+/node_modules/
+
+# Next.js and TypeScript output
+/.next/
+/out/
+/build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local settings and secrets
+.env*
+!.env.example
+/.vercel/
+.DS_Store
+Thumbs.db
+*.log
+
+# Isolated browser tests and their local profiles
+/test-results/
+/playwright-report/
+
+# Generated production service worker
+/public/sw.js

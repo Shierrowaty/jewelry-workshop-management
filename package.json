@@ -1,0 +1,49 @@
+{
+  "name": "jewelry-workshop-management",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/build-pwa.cjs",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "test": "npm run test:calculations && npm run test:data && npm run test:cloud && npm run test:sync && npm run test:pwa",
+    "test:calculations": "node --experimental-strip-types --test src/features/quotes/calculations.test.mjs",
+    "test:data": "playwright test --project=data",
+    "test:e2e": "playwright test --project=browser --project=sync-browser --project=pwa-browser",
+    "test:sync": "playwright test --project=sync",
+    "test:cloud": "playwright test --project=cloud",
+    "test:pwa": "playwright test --project=pwa"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/kaushan-script": "5.3.0",
+    "@fontsource/manrope": "5.3.0",
+    "@supabase/ssr": "0.12.6",
+    "@supabase/supabase-js": "2.115.0",
+    "dexie": "4.4.5",
+    "dexie-react-hooks": "4.4.0",
+    "lucide-react": "1.40.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@playwright/test": "1.62.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.3.4",
+    "fake-indexeddb": "6.2.5",
+    "postcss": "8.5.27",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  }
+}

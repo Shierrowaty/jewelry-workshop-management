@@ -1,0 +1,78 @@
+@import "@fontsource/manrope/latin-400.css";
+@import "@fontsource/manrope/latin-ext-400.css";
+@import "@fontsource/manrope/latin-500.css";
+@import "@fontsource/manrope/latin-ext-500.css";
+@import "@fontsource/manrope/latin-600.css";
+@import "@fontsource/manrope/latin-ext-600.css";
+@import "@fontsource/cormorant-garamond/latin-500.css";
+@import "@fontsource/cormorant-garamond/latin-ext-500.css";
+@import "@fontsource/kaushan-script/latin-400.css";
+@import "@fontsource/kaushan-script/latin-ext-400.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-brand: "Kaushan Script", cursive;
+  --color-canvas: #f6f5f1;
+  --color-surface: #ffffff;
+  --color-ink: #292c29;
+  --color-muted: #6c6f67;
+  --color-line: #e4e3db;
+  --color-gold: #98752f;
+  --color-gold-soft: #f7f2e6;
+  --color-gold-light: #dcc18a;
+  --color-sidebar: #242823;
+  --color-sidebar-active: #3b3d2f;
+  --color-sidebar-text: #f5f3eb;
+  --color-sidebar-muted: #b1b5ab;
+  --color-sidebar-line: #42463c;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+
+  aside :focus-visible {
+    outline-color: var(--color-gold-light);
+  }
+
+  ::selection {
+    background: #e8d7ad;
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .sidebar-surface {
+    background: linear-gradient(165deg, #2c3029 0%, var(--color-sidebar) 55%, #20241f 100%);
+  }
+
+  .placeholder-surface {
+    background: radial-gradient(ellipse at 50% 45%, #fbf9f4 0%, var(--color-surface) 70%);
+    box-shadow: 0 4px 7px #272d2202, 0 14px 45px -28px #272d2240;
+  }
+}
